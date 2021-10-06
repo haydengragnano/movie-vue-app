@@ -17,7 +17,7 @@
     <button v-on:click="createMovie()">Create</button>
     <h1>All Movies</h1>
     <div v-for="movie in movies" v-bind:key="movie.id">
-      <h1>Ttile: {{ movie.title }}</h1>
+      <h1>Title: {{ movie.title }}</h1>
       <p>Plot: {{ movie.plot }}</p>
       <p>Year:{{ movie.year }}</p>
     </div>
