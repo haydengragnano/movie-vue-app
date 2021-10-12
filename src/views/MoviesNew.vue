@@ -20,6 +20,8 @@
       <div>
         <label>Plot:</label>
         <input type="text" v-model="newMovieParams.plot" />
+        <br />
+        <small>{{ 200 - newMovieParams.plot.length }} characters remaining</small>
       </div>
       <input type="submit" value="Create" />
     </form>
@@ -33,7 +35,9 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      newMovieParams: {},
+      newMovieParams: {
+        plot: "",
+      },
       errors: [],
     };
   },
@@ -43,6 +47,7 @@ export default {
         .post("/movies", this.newMovieParams)
         .then((response) => {
           console.log(response.data);
+          this.$parent.flashMessage = "Movie successfully created!";
           this.$router.push("/movies");
         })
         .catch((error) => {
