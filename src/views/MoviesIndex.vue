@@ -1,6 +1,6 @@
 <template>
-  <div class="movies-index">
-    <h1>All Movies</h1>
+  <div class="movies-index" style="background-color: blue">
+    <h1 class="animate__animated animate__slideInLeft animate__infinite infinite">Movies!</h1>
     Search by title:
     <input v-model="titleFilter" list="titles" />
     <datalist id="titles">
@@ -32,6 +32,12 @@
     </div>
   </div>
 </template>
+
+<style>
+h1 {
+  color: red;
+}
+</style>
 
 <script>
 import axios from "axios";
